@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en"><head><style id="qw-theme">:root {
+  --color-bg: #f2f1f4;
+  --color-text: #352f3d;
+  --color-navbar-bg: #eae8ed;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #eae8ed;
+  --color-bg-hover: #dcdadf;
+  --color-surface: #eae8ed;
+  --color-surface-hover: #dcdadf;
+  --color-surface-active: #c1bec6;
+  --color-border: #c1bec6;
+  --color-border-light: #dcdadf;
+  --color-border-strong: #c1bec6;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 18%, transparent);
+  --color-primary-border: #8575ff;
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #fff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #eae8ed;
+  --color-user-bubble: #f3f3f7;
+  --color-user-bubble-text: #352f3d;
+  --color-text-secondary: #5e5966;
+  --color-text-tertiary: #7a7582;
+  --color-text-muted: #938f9b;
+  --color-text-on-primary: #f2f1f4;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f4eb;
+  --color-success-border: #c4dccb;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fbe9ea;
+  --color-error-border: #eecbcd;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #fff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fdf6e4;
+  --color-warning-border: #f5dda6;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #e6f0fb;
+  --color-info-border: #c0d5ec;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #dcdadf80;
+  --color-shadow: #352f3d40;
+  --color-hover: #352f3d0d;
+  --color-tooltip-bg: #eae8ed;
+  --color-tooltip-text: #352f3d;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #352f3d0f;
+  --shadow-md: 0 4px 12px #352f3d1a;
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #367c53;
+  --color-teal: #0c9aa7;
+  --color-code-bg: #eae8ed;
+  --color-code-header-bg: #dcdadf;
+  --color-code-text: #352f3d;
+  --color-code-border: #c1bec6;
+  --color-code-muted: #5e5966;
+  --color-inline-code-bg: #eae8ed;
+  --color-inline-code-text: #352f3d;
+  --color-inline-code-border: #c1bec6;
+  --color-scrollbar-thumb: #c1bec6;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #352f3d;
+  --color-graph-node-text-dim: #938f9b;
+  --color-graph-edge-default: #938f9b;
+  --color-graph-edge-cross: #d08025;
+  --color-graph-edge-text: #5e5966;
+  --color-graph-edge-stroke: #f2f1f4;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #938f9b;
+  --color-graph-cat-file: #3878b0;
+  --color-graph-cat-folder: #5e5966;
+  --color-graph-cat-file-aggregate: #2d6a9f;
+  --color-graph-cat-class: #7138cc;
+  --color-graph-cat-function: #367c53;
+  --color-graph-cat-method: #0c9aa7;
+  --color-graph-cat-variable: #d08025;
+  --color-graph-cat-import: #b06a1a;
+  --color-graph-cat-module: #5e35a8;
+  --color-graph-cat-concept: #933;
+  --color-graph-cat-person: #c44d4d;
+  --color-graph-cat-org: #0c9aa7;
+  --color-graph-cat-organization: #0c9aa7;
+  --color-graph-cat-product: #8e47ff;
+  --color-graph-cat-metric: #c44d78;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #b34d8a;
+  --color-graph-cat-code: #3878b0;
+  --color-graph-cat-doc: #5e5966;
+  --color-graph-cat-url: #367c53;
+  --color-graph-cat-email: #5e35a8;
+  --color-graph-cat-unknown: #938f9b;
+  --color-graph-rel-contains: #938f9b;
+  --color-graph-rel-extends: #7138cc;
+  --color-graph-rel-implements: #3878b0;
+  --color-graph-rel-imports: #d08025;
+  --color-graph-rel-uses: #367c53;
+  --color-graph-rel-calls: #367c53;
+  --color-graph-rel-references: #d08025;
+  --color-graph-rel-related-to: #938f9b;
+  --color-graph-rel-works-on: #933;
+  --color-graph-rel-owns: #0c9aa7;
+  --color-graph-rel-depends-on: #b06a1a;
+  --color-graph-rel-parent-of: #938f9b;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #938f9b;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #eae8ed;
+  --qs-tertiary-background: #eae8ed;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thi Nguyen — Senior Solutions Architect @ AWS</title>
+<meta name="description" content="Thi Nguyen (Nguyen Dinh Thi) — Senior Solutions Architect &amp; GenAI Champion at AWS. 20 years in software architecture and cloud, specializing in GenAI and agentic AI.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f4f6fb;
+    --surface: #ffffff;
+    --surface-hover: #f7f9fc;
+    --border: #e4e8f0;
+    --text: #16203a;
+    --text-secondary: #4a5674;
+    --text-muted: #8a95ad;
+    --primary: #ff9900;
+    --primary-soft: rgba(255,153,0,0.10);
+    --accent: #2b7fff;
+    --accent-soft: rgba(43,127,255,0.09);
+    --radius: 14px;
+    --radius-sm: 8px;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+    --maxw: 900px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(255,153,0,0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 10%, rgba(43,127,255,0.08), transparent 55%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.80);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-weight: 700; letter-spacing: 0.2px; }
+  .brand span { color: var(--primary); }
+  .nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--text-secondary); }
+  .nav-links a:hover { color: var(--text); }
+  @media (max-width: 620px) { .nav-links { display: none; } }
+
+  /* HERO */
+  header.hero { padding: 88px 0 64px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--primary);
+    background: var(--primary-soft); border: 1px solid rgba(255,153,0,0.25);
+    padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
+    font-weight: 600;
+  }
+  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); }
+  h1 { font-size: 44px; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 16px; }
+  h1 .accent { background: linear-gradient(90deg, var(--primary), #ffce7a); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { font-size: 19px; color: var(--text-secondary); max-width: 640px; margin-bottom: 30px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 20px; border-radius: var(--radius-sm);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.18s ease; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--primary); color: #1a1200; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,153,0,0.3); }
+  .btn-ghost { border-color: var(--border); color: var(--text-secondary); background: var(--surface); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+
+  /* STATS */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 52px; }
+  @media (max-width: 620px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 3px rgba(16,32,58,0.04); }
+  .stat .num { font-family: var(--mono); font-size: 28px; font-weight: 700; color: var(--text); }
+  .stat .lbl { font-size: 12.5px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* SECTION */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  .sec-title { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+  .about-text { font-size: 17px; color: var(--text-secondary); max-width: 720px; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+
+  /* FOCUS GRID */
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+  .fcard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; transition: all 0.18s ease; box-shadow: 0 1px 3px rgba(16,32,58,0.04); }
+  .fcard:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--surface-hover); box-shadow: 0 10px 28px rgba(16,32,58,0.08); }
+  .fcard .ic { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 20px; }
+  .fcard h3 { font-size: 16px; margin-bottom: 6px; }
+  .fcard p { font-size: 14px; color: var(--text-muted); }
+
+  /* CERTS */
+  .cert-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    font-size: 13px; padding: 8px 14px; border-radius: 100px;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text-secondary);
+    display: inline-flex; align-items: center; gap: 7px; transition: all 0.15s ease;
+  }
+  .chip:hover { border-color: var(--primary); color: var(--text); }
+  .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+
+  /* CONTACT */
+  .contact-card { background: linear-gradient(135deg, var(--surface), var(--bg-soft)); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; text-align: center; }
+  .contact-card h2 { font-size: 26px; margin-bottom: 10px; }
+  .contact-card p { color: var(--text-secondary); margin-bottom: 24px; }
+  .social-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+  footer { padding: 32px 0 48px; text-align: center; color: var(--text-muted); font-size: 13px; }
+
+  .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .fade.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">Thi<span>.</span>Nguyen</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Thi Nguyen<br><span class="accent">Senior Solutions Architect</span></h1>
+    <p class="subtitle">GenAI Champion @ AWS. I help enterprises design and ship generative &amp; agentic AI on AWS — from multi-agent architectures to production reliability, security, and cost-optimized scale.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/ndthi/" target="_blank" rel="noopener">View LinkedIn</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">20+</div><div class="lbl">Years in Cloud &amp; Architecture</div></div>
+      <div class="stat"><div class="num">11+</div><div class="lbl">AWS Certifications</div></div>
+      <div class="stat"><div class="num">50+</div><div class="lbl">Projects Delivered</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-title">About</div>
+    <p class="about-text">I'm a <strong>Senior Solutions Architect and GenAI Champion at AWS Vietnam</strong>, with 20 years of experience across software architecture and cloud. I work with enterprise customers in <strong>financial services</strong> and <strong>software/ISV</strong> segments to adopt generative and agentic AI on AWS. My focus is turning promising AI prototypes into <strong>reliable, secure, cost-efficient production systems</strong> — with a builder's mindset that pairs architecture judgment with hands-on implementation.</p>
+  </div>
+</section>
+
+<section id="focus">
+  <div class="wrap">
+    <div class="sec-title">Focus Areas</div>
+    <div class="grid">
+      <div class="fcard"><div class="ic">🤖</div><h3>Agentic AI &amp; Multi-Agent Systems</h3><p>Coordinator/subagent architectures, tool use, context passing, and reliable orchestration for production workloads.</p></div>
+      <div class="fcard"><div class="ic">🧱</div><h3>GenAI on AWS Bedrock</h3><p>RAG pipelines, model selection, guardrails, and integrating foundation models into enterprise applications.</p></div>
+      <div class="fcard"><div class="ic">🛡️</div><h3>Reliability &amp; Security</h3><p>Enforcement patterns, evaluation &amp; validation loops, data governance, and graceful degradation at the human/AI boundary.</p></div>
+      <div class="fcard"><div class="ic">📈</div><h3>Cost &amp; Scale Optimization</h3><p>Balancing innovation speed with simple, sustainable architecture and predictable cost as systems scale.</p></div>
+      <div class="fcard"><div class="ic">🏦</div><h3>Core Banking on Cloud</h3><p>Landing zone architecture, core banking migration &amp; Day 2 operations for financial institutions — with the security and resilience banking demands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="sec-title">Certifications</div>
+    <div class="cert-list">
+      <span class="chip"><span class="dot"></span>AWS ML Specialty</span>
+      <span class="chip"><span class="dot"></span>AWS GenAI Developer Pro</span>
+      <span class="chip"><span class="dot"></span>AWS AI Practitioner</span>
+      <span class="chip"><span class="dot"></span>AWS Solutions Architect</span>
+      <span class="chip"><span class="dot"></span>Anthropic Claude Developer (CCDV-F)</span>
+      <span class="chip"><span class="dot"></span>+ 11 AWS Certifications</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Let's connect</h2>
+      <p>Open to Solutions Architect &amp; Applied AI roles. Reach out anytime.</p>
+      <div class="social-row">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/ndthi/" target="_blank" rel="noopener">in LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/nguyendinhthi0705" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Thi Nguyen (Nguyen Dinh Thi) · Built with care</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('section, .stat, .fcard').forEach(function(el){ el.classList.add('fade'); obs.observe(el); });
+</script>
+
+
+
+</body></html>
